@@ -1,0 +1,72 @@
+{
+    "name": "doc-generation",
+    "version": "0.0.1",
+    "description": "Library that creates documentation from code",
+    "private": true,
+    "license": "UNLICENSED",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node scripts/start.js",
+        "build": "node scripts/build.js",
+        "exe": "node src/index.js",
+        "test": "node scripts/test.js --env=jsdom"
+    },
+    "dependencies": {
+        "babel-core": "^7.0.0-0",
+        "@babel/cli": "7.0.0-beta.43",
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/runtime": "7.0.0-beta.43",
+        "@babel/preset-env": "7.0.0-beta.43",
+        "@babel/preset-flow": "7.0.0-beta.43",
+        "@babel/preset-stage-3": "7.0.0-beta.43",
+        "@babel/preset-stage-2": "7.0.0-beta.43",
+        "@babel/plugin-proposal-class-properties": "7.0.0-beta.43",
+        "@babel/plugin-proposal-decorators": "7.0.0-beta.43",
+        "@babel/plugin-proposal-nullish-coalescing-operator": "7.0.0-beta.43",
+        "@babel/plugin-proposal-optional-chaining": "7.0.0-beta.43",
+        "@babel/plugin-syntax-decorators": "7.0.0-beta.43",
+        "@babel/plugin-syntax-flow": "7.0.0-beta.43",
+        "@babel/plugin-syntax-nullish-coalescing-operator": "7.0.0-beta.43",
+        "@babel/register": "7.0.0-beta.43",
+        "babel-eslint": "8.2.2",
+        "babel-jest": "22.4.3",
+        "chalk": "2.3.2",
+        "docco": "0.8.0",
+        "dotenv": "5.0.1",
+        "dotenv-expand": "4.2.0",
+        "eslint": "4.19.1",
+        "eslint-plugin-flowtype": "2.46.1",
+        "eslint-plugin-import": "2.10.0",
+        "fs-extra": "5.0.0",
+        "jest": "22.4.3"
+    },
+    "jest": {
+        "collectCoverageFrom": [
+            "ClientApp/**/*.{js,jsx}"
+        ],
+        "testMatch": [
+            "<rootDir>/ClientApp/**/__tests__/**/*.{js,jsx}",
+            "<rootDir>/ClientApp/**/?(*.)(spec|test).{js,jsx}"
+        ],
+        "testEnvironment": "node",
+        "testURL": "http://localhost",
+        "transform": {
+            "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+            "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+            "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+        },
+        "transformIgnorePatterns": [
+            "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+        ],
+        "moduleNameMapper": {
+            "^react-native$": "react-native-web"
+        },
+        "moduleFileExtensions": [
+            "js",
+            "js",
+            "json",
+            "jsx",
+            "node"
+        ]
+    }
+}
